@@ -38,8 +38,6 @@ public abstract class Vector {
         product[2] = zScaled;
         return product;
     }
-    // Okay basicamente creo que esto nos devuelve otro vector endonde nosotros tenemos que dibujar los rayos. Pero no lo entiendo taaan bien, las interpolaciones las hacemos 3 veces para encontrar un punto medio de dos puntos.
-    // Me esta comiendo la logica
     public float[] interpolation(float[] variable, Vector anotherVector) {
         float[] hola = new float[0];
 

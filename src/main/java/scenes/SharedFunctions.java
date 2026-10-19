@@ -15,12 +15,10 @@ public class SharedFunctions {
     }
 
     public static double[] getAlpha(double[] dimensions) {
-        // In order to get alpha we need to loop through each pixel of the width
-        // And do the following operation a = (i / width), then save all the alphas
         int width = (int) dimensions[0];
         double[] alphas = new double[width];
         for (int i = 0; i < width; i++) {
-            double currentAlpha = i / dimensions[0];
+            double currentAlpha = (i + 1) / dimensions[0];
             alphas[i] = currentAlpha;
         }
         return alphas;
@@ -30,14 +28,14 @@ public class SharedFunctions {
         int height = (int) dimensions[1];
         double[] betas = new double[height];
         for (int i = 0; i < height; i++) {
-            Double currentBeta = i / dimensions[1];
+            double currentBeta = (i + 1) / dimensions[1];
             betas[i] = currentBeta;
         }
         return betas;
     }
 
     public static void main(String[] args) {
-        double[] sizes = {1200d, 800d};
+        double[] sizes = {50d, 50d};
         getAlpha(sizes);
         getBeta(sizes);
     }
