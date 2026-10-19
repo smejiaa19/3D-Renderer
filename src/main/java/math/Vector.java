@@ -1,17 +1,21 @@
 package math;
 
 public abstract class Vector {
-    private final float[] coordinates;
+    private final float x, y, z ;
 
-    protected Vector() {
-        coordinates = new float[3];
+    protected Vector(float x, float y, float z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+    public float getX() {
+        return x;
+    }
+    public float getY() {
+        return y;
+    }
+    public float getZ() {
+        return z;
     }
 
-    public float[] getCoordinates() {
-        return coordinates.clone();
-    }
-
-    public void setCoordinates(int i, float value) {
-        coordinates[i] = value;
-    }
 }
