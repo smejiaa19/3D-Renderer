@@ -35,8 +35,8 @@ public class SharedFunctions {
     }
 
     public static void main(String[] args) {
-        double[] sizes = {50d, 50d};
-        getAlpha(sizes);
-        getBeta(sizes);
+        double[] dimensiones = getScreenSize();
+        double[] alphas = getAlpha(dimensiones);
+        double[] betas = getBeta(dimensiones);
     }
 }

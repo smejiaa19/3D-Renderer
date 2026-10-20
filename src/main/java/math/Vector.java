@@ -1,46 +1,60 @@
 package math;
 
 public abstract class Vector {
-    private final float x, y, z ;
+    private final double x, y, z ;
 
-    protected Vector(float x, float y, float z) {
+    protected Vector(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
-    public float getX() {
+    public double getX() {
         return x;
     }
-    public float getY() {
+    public double getY() {
         return y;
     }
-    public float getZ() {
+    public double getZ() {
         return z;
     }
 
-    public float[] add(Vector vector2) {
-        float[] results = new float[3];
-        float xScaled = this.x + vector2.getX();
+    // TODO: Modify this function so that it return a vector like x, y and z and not an array.
+    public double[] add(Vector vector2) {
+        double[] results = new double[3];
+        double xScaled = this.x + vector2.getX();
         results[0] = xScaled;
-        float yScaled = this.y+ vector2.getY();
+        double yScaled = this.y+ vector2.getY();
         results[1] = yScaled;
-        float zScaled = this.z + vector2.getZ();
+        double zScaled = this.z + vector2.getZ();
         results[2] = zScaled;
         return results;
     }
-    public float[] scale(float scalar) {
-        float[] product = new float[3];
-        float xScaled = this.x * scalar;
+
+    // TODO: Same as the other one
+    public double[] scale(double scalar) {
+        double[] product = new double[3];
+        double xScaled = this.x * scalar;
         product[0] = xScaled;
-        float yScaled = this.y * scalar;
+        double yScaled = this.y * scalar;
         product[1] = yScaled;
-        float zScaled = this.z * scalar;
+        double zScaled = this.z * scalar;
         product[2] = zScaled;
         return product;
     }
-    public float[] interpolation(float[] variable, Vector anotherVector) {
-        float[] hola = new float[0];
+    public double[][] interpolation(double[] alpha, double[] beta, Vector anotherVector) {
+        int dimension = alpha.length * beta.length;
+        double[][] interpolationValues = new double[dimension][3];
 
-        return hola;
+        // Esto nos da las primeras dos interpolaciones de alpha
+        for (int i = 0; i < alpha.length; i++){
+            // Primer paso
+            double[] firstInterpolation = (scale((1 - alpha[i])));
+            // Segundo paso
+            double[] secondInterpolation = anotherVector.scale(alpha[i]);
+            // Tercer paso
+
+        }
+
+        return interpolationValues;
     }
 }
